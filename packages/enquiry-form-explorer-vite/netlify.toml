@@ -13,7 +13,7 @@ force = true
 [redirects.headers]
 Access-Control-Allow-Origin = "*"
 Authorization = "Bearer pat-eu1-eb6d47e7-af77-4bc4-b0a5-d96219bc645b"
- 
+
 [[redirects]]
 from = "/*"
 to = "/index.html"

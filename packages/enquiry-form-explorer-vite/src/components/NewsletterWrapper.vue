@@ -1,12 +1,12 @@
 <template>
-  <div class="lg:flex lg:justify-between">
+  <div class="lg:flex lg:justify-between" :class="getSite()">
     <div class="w-full lg:w-2/3">
       <div class="bg-grey-lighter py-20 pl-16 lg:pl-32 xl:pl-64">
         <a
           class="flex flex-col items-end w-140 md:w-164"
-          href="https://www.explorer.de/"
+          :href="siteData.domenUrl" target="_blank"
         >
-          <img alt="Explorer main logo" src="@/assets/logoEx.svg" />
+          <img :alt="`${siteData.siteName} logo`" :src="getImageUrl(siteData.logoImg)" />
         </a>
       </div>
       <div class="mx-24 lg:mx-32 xl:mx-64 overflow-hidden lg:overflow-visible">
@@ -21,12 +21,19 @@
     <aside class="hidden lg:block h-screen w-1/3 sticky top-0">
       <img
         alt="Aside image"
-        src="@/assets/sidebarEx.jpg"
+        :src="getImageUrl(siteData.sidebarImg)"
         class="w-full h-full object-cover"
       />
     </aside>
   </div>
 </template>
+
+<script setup lang="ts">
+import { getSiteData, getSite, getImageUrl } from '@/helpers';
+
+const siteData = getSiteData();
+
+</script>
 
 <style>
 .main-content {

@@ -4,7 +4,7 @@
       <nav
         class="header-nav sticky top-0 z-50 flex justify-start items-center py-20 pl-16 lg:pl-32 xl:pl-64"
       >
-        <a :href="siteData.domenUrl">
+        <a :href="siteData.domenUrl" target="_blank">
           <img :alt="`${siteData.siteName} logo`" :src="getImageUrl(siteData.logoImg)" />
         </a>
         <Stepper
