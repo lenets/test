@@ -21,7 +21,7 @@
     <aside class="hidden lg:block h-screen w-1/3 sticky top-0">
       <img
         alt="Aside image"
-        src="@/assets/sidebaExr.jpg"
+        src="@/assets/sidebaEx.jpg"
         class="w-full h-full object-cover"
       />
     </aside>
