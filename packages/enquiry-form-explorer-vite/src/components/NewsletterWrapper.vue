@@ -58,6 +58,6 @@ const siteData = getSiteData();
   @apply bg-grey-lighter;
 }
 .stattravel .header-nav {
-  @apply bg-white d-flex justify-center pl-0;
+  @apply bg-white flex justify-center pl-0;
 }
 </style>
