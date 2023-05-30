@@ -38,6 +38,7 @@ function getTailwindConfig({
         primary: {
           lighter: brandStyles.colorPrimaryLighter,
           light: brandStyles.colorPrimaryLight,
+          dark: brandStyles.colorPrimaryDark,
           DEFAULT: brandStyles.colorPrimary,
         },
         secondary: {
