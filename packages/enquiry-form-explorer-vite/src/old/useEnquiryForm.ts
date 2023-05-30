@@ -1,28 +1,17 @@
 import { computed, ref, watch, type Ref } from 'vue';
 import {
   enquiryDataSchema,
-  utmDataSchema,
   PickedDateSelectionOption,
 } from './enquiryContentData';
 import { getDataFromStorage, saveOnSessionStorage } from './helpers';
 
 const formData = ref<typeof enquiryDataSchema>();
-const utmData = ref<typeof utmDataSchema>();
 const dataFromStorage = getDataFromStorage('enquirySessionData');
-const utmDataFormStorage = getDataFromStorage('utmSessionData');
 
 watch(
   formData,
   (newData) => {
     saveOnSessionStorage('enquirySessionData', newData);
-  },
-  { deep: true }
-);
-
-watch(
-  utmData,
-  (newData) => {
-    saveOnSessionStorage('utmSessionData', newData)
   },
   { deep: true }
 );
@@ -129,15 +118,8 @@ export function useEnquiryForm() {
     formData.value = enquiryDataSchema;
   }
 
-  if (utmDataFormStorage) {
-    utmData.value = utmDataFormStorage;
-  } else {
-    utmData.value = utmDataSchema;
-  }
-
   return {
     formData: formData as Ref<typeof enquiryDataSchema>,
-    utmData: utmData as Ref<typeof utmDataSchema>,
     validateForm,
     getFieldErrors,
     scrollToErrorMessage,

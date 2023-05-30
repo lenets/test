@@ -17,7 +17,7 @@ import { proccess } from '@/hubspot';
 import { ref } from 'vue';
 
 import EnquiryFormWrapper from '@/components/EnquiryFormWrapper.vue';
-import { roundNumber, getSiteData } from '@/helpers';
+import { roundNumber } from '@/helpers';
 
 import {
   departureAirportsOptions,
@@ -29,7 +29,6 @@ import {
 
 const router = useRouter();
 const isPending = ref(false);
-const siteData = getSiteData();
 
 const { formData, validateForm, getFieldErrors, scrollToErrorMessage } =
   useEnquiryForm();
@@ -65,8 +64,8 @@ const sliderStep = formData.value.metaPrice ? Math.ceil((sliderMaxValue - slider
 <template>
   <EnquiryFormWrapper>
     <div class="mt-48 mb-50">
-      <h1 class="step-title">
-        {{ siteData.secondStepTitle }}
+      <h1 class="mb-40 md:mb-50 font-bold text-22 text-primary font-secondary">
+        Erzähl uns etwas mehr über Deine Reise.
       </h1>
 
       <form
@@ -94,7 +93,7 @@ const sliderStep = formData.value.metaPrice ? Math.ceil((sliderMaxValue - slider
             title="Wieviel planst Du für Deine Reise pro Person ungefähr ausgeben?"
             class="mb-8"
           />
-          <div class="slider-sub-title text-grey-dark font-normal mb-60 font-secondary">
+          <div class="text-grey-dark font-normal mb-48 font-secondary">
             (Die Budgetempfehlung ist geschätzt)
           </div>
           <SliderRangeWithNumberInput
@@ -127,7 +126,7 @@ const sliderStep = formData.value.metaPrice ? Math.ceil((sliderMaxValue - slider
             title="Was ist Dir sonst noch auf Deiner Reise wichtig?"
           />
           <TextArea
-            class="h-360 note"
+            class="h-360 md:h-200"
             v-model="formData.additionalUserComment"
             :placeholder="additionalUserCommentPlaceholder"
           ></TextArea>
@@ -147,7 +146,7 @@ const sliderStep = formData.value.metaPrice ? Math.ceil((sliderMaxValue - slider
         </fieldset>
         <div class="flex justify-between">
           <Button
-            class="btn-primary-outline h-48 py-16 px-28"
+            class="btn-primary-outline h-48 py-10 px-16 w-180"
             @click="router.push({ name: 'first' })"
           >
             Zurück
@@ -159,17 +158,3 @@ const sliderStep = formData.value.metaPrice ? Math.ceil((sliderMaxValue - slider
     </div>
   </EnquiryFormWrapper>
 </template>
-
-<style scoped>
-.note {
-  @apply md:h-[162px];
-}
-/***** SITES STYLES *****/
-.stattravel .slider-sub-title {
-  @apply text-18;
-}
-.stattravel .note {
-  @apply md:h-[140px];
-}
-/***** END SITES STYLES *****/
-</style>

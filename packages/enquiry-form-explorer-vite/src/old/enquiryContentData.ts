@@ -1,5 +1,5 @@
-import destinationList from './data/destinationList.json';
-import agencyList from './data/agencyList.json';
+import destinationList from './destinationList.json';
+import agencyList from './agencyList.json';
 
 export enum PickedDateSelectionOption {
   calendars = 'Ja',
@@ -25,10 +25,9 @@ export const enquiryDataSchema = {
   travelAgencyAgreementOptions: '',
   travelAgency: '',
   childrenCount: 0,
-  childrensAge: [] as number[],
   departureAirports: [] as string[],
   adultsCount: 2,
-  adultsAge: [0, 0] as number[],
+  childrensAge: [] as number[],
   preferredLeisureType: [] as string[],
   budgetValue: [2000, 6000],
   additionalUserComment: '',
@@ -47,12 +46,6 @@ export const enquiryDataSchema = {
   sendingStatus: Steps.first,
   contactID: '',
   dealID: '',
-};
-
-export const utmDataSchema = {
-  utm_campaign: '',
-  utm_medium: '',
-  utm_source: '',
 };
 
 export const destinationsOptions = destinationList

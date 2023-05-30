@@ -10,6 +10,7 @@ import {
   MonthPicker,
   PointerHeading,
   MultiInputsWithCounter,
+  Counter,
   Spinner
 } from 'components-vue3';
 
@@ -27,7 +28,6 @@ import {
   focusDatePickerInput,
   blurDatePickerInput,
   hasUrlParam,
-  getSiteData,
 } from '@/helpers';
 import parse from 'date-fns/parse';
 
@@ -42,11 +42,10 @@ import { ref } from 'vue';
 const router = useRouter();
 const route = useRoute();
 const isPending = ref(false);
-const siteData = getSiteData();
 
 const monthPickerItems = getMonths(new Date());
 
-const { formData, utmData, validateForm, getFieldErrors, scrollToErrorMessage } =
+const { formData, validateForm, getFieldErrors, scrollToErrorMessage } =
   useEnquiryForm();
 
 function isStepValid() {
@@ -83,12 +82,6 @@ function setMetaParamsWithDestinationsOptions() {
   const hasPriceParam = hasUrlParam(urlParams, 'price');
   const hasRegionParam = hasUrlParam(urlParams, 'region');
   const hasThumbnailUrl = hasUrlParam(urlParams, 'thumbnailUrl');
-
-  for (let key in urlParams) {
-    if(key === 'utm_campaign' || key === 'utm_medium' || key === 'utm_source') {
-      utmData.value[key] = urlParams[key];
-    }
-  }
 
   if (hasPriceParam && Math.trunc(urlParams.price) !== 0) {
     formData.value.metaPrice = Math.trunc(urlParams.price).toString();
@@ -161,7 +154,8 @@ async function submit() {
 }
 
 const destinationScroll = ref<null | HTMLElement>(null);
-function scrollToDestination() {
+
+function scrollToTest() {
   if(window.innerWidth <= 600) {
     destinationScroll.value?.scrollIntoView({ behavior: "smooth" });
   }
@@ -174,8 +168,8 @@ router.replace('/');
 <template>
   <EnquiryFormWrapper>
     <div class="mt-48 mb-50">
-      <h1 class="step-title">
-        {{ siteData.firstStepTitle }}
+      <h1 class="mb-40 md:mb-48 font-bold text-22 text-primary font-secondary">
+        Plane Deine Reise mit einem Explorer Reiseberater
       </h1>
       <div class="mb-40 mb:mb-48 flex" v-if="formData.metaDestination">
         <div v-if="formData.metaThumbnailUrl" class="mr-24">
@@ -204,7 +198,7 @@ router.replace('/');
             :options="destinationsOptionsWithParams"
             :maxItemsSelected="3"
             @change="formData.preferredDestinations = $event"
-            @open="scrollToDestination"
+            @open="scrollToTest"
           ></MultiSelect>
         </fieldset>
 
@@ -246,11 +240,10 @@ router.replace('/');
                 "
                 @focus="currentCalendar = 'first'"
                 :showDropdown="isMobile ? currentCalendar === 'first' : true"
-                :placeholder="siteData.datePickerStartLabel"
+                placeholder="Reisedaten auswählen"
                 btnTextClear="löschen"
                 btnTextToday="heute"
                 lang="de"
-                inputClass="text-input-default h-[40px]"
               ></DatePicker>
               <DatePicker
                 class="mt-32 md:mt-0 md:ml-32"
@@ -267,11 +260,10 @@ router.replace('/');
                 "
                 @focus="currentCalendar = 'second'"
                 :showDropdown="isMobile ? currentCalendar === 'second' : true"
-                :placeholder="siteData.datePickerEndLabel"
+                placeholder="Reisedaten auswählen"
                 btnTextClear="löschen"
                 btnTextToday="heute"
                 lang="de"
-                inputClass="text-input-default h-[40px]"
               ></DatePicker>
             </div>
             <div class="error-message">
@@ -320,30 +312,22 @@ router.replace('/');
 
         <fieldset class="mb-48">
           <PointerHeading title="Mit wem wirst Du reisen? *" />
-          <div class="grid gap-50 grid-cols-1 md:grid-cols-[auto_auto] items-start">
-              <div class="max-w-[275px]">
-                <MultiInputsWithCounter
-                  class="mt-0 mb-0 font-secondary"
-                  counterTitle="Erwachsene"
-                  counterSubTitle="(> 17 Jahre)"
-                  :min="2"
-                  :max="8"
-                  title="Alter zur Reisezeit - für Jugend- & Studenten-Tarife"
-                  beforeInputTitle="Erwachsener"
-                  afterInputTitle="Jahre"
-                  v-model:counter="formData.adultsCount"
-                  v-model:values="formData.adultsAge  "
-                  :minValue="18"
-                  :maxValue="99"
-                  itemsWrapperClasses="justify-end"
+          <div class="grid gap-50 grid-cols-1 md:grid-cols-2 items-center">
+              <div class="max-w-[290px] self-start">
+                <Counter
+                  class="mt-0 mb-0"
+                  title="Erwachsene"
+                  subTitle="(> 17 Jahre)"
+                  v-model="formData.adultsCount"
+                  :min="1"
                 />
               </div>
-              <div class="max-w-[275px] ml-auto">
-                <MultiInputsWithCounter
+              <div>
+                <MultiInputsWithCounter 
                   class="mt-0 mb-0 font-secondary"
                   counterTitle="Kinder"
                   :max="6"
-                  title="Alter der Kinder zur Reisezeit"
+                  title="Alter der Kinder zur Reisezeit" 
                   beforeInputTitle="Kind"
                   afterInputTitle="Jahre"
                   v-model:counter="formData.childrenCount"
@@ -354,7 +338,7 @@ router.replace('/');
               </div>
           </div>
         </fieldset>
-
+        
         <fieldset class="mb-48">
           <PointerHeading
             title="Über welche E-Mail Adresse können wir Dich für Deine Reiseplanung erreichen? *"
@@ -365,15 +349,14 @@ router.replace('/');
             placeholder="E-Mail Adresse *"
             :errors="getFieldErrors('emailAdress')"
             :hasIcon="true"
-            inputClass="text-input-default h-[48px]"
             autocomplete="email"
           >
-            <IconEmail class="email-icon h-14 text-primary" />
+            <IconEmail class="h-14 text-primary" />
           </TextInput>
         </fieldset>
 
         <fieldset>
-          <p class="mb-18 font-secondary text-16 text-primary-dark">
+          <p class="mb-18 font-secondary text-16">
             Möchtest Du unseren E-Mail-Newsletter mit Angeboten und
             Reiseinspirationen erhalten? Natürlich ohne Spam, im
             10-Tages-Rhythmus. Du kannst Dich jederzeit abmelden. *
@@ -398,11 +381,11 @@ router.replace('/');
       </form>
 
       <div>
-        <div class="footer-text">
+        <div class="font-secondary">
           <p class="mb-16 text-14">
             Mit dem Absenden dieser Anfrage stimme ich den 
-            <a target="_blank" class="font-semibold border-b" :href="siteData.conditionLink">AGB</a> und
-            <a target="_blank" class="font-semibold border-b" :href="siteData.privacyPolicyLink">Datenschutzbestimmungen</a> 
+            <a target="_blank" class="font-semibold border-b" href="https://www.explorer.de/beratung/agb.html">AGB</a> und
+            <a target="_blank" class="font-semibold border-b" href="https://www.explorer.de/beratung/datenschutz.html">Datenschutzbestimmungen</a> 
             zu und erlaube Explorer Fernreisen, mich für Rückfragen, Zusatzinformationen 
             oder Zusatzprodukten zu meiner geplanten Reise und für ähnliche Reiseprodukte 
             per eMail zu kontaktieren.
@@ -416,9 +399,3 @@ router.replace('/');
     </div>
   </EnquiryFormWrapper>
 </template>
-
-<style scoped>
-.footer-text {
-  @apply font-secondary text-[#333];
-}
-</style>

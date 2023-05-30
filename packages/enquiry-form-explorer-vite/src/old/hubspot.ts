@@ -1,5 +1,5 @@
 import { useEnquiryForm } from '@/useEnquiryForm';
-import { prepareDestination, getSiteData } from '@/helpers';
+import { prepareDestination } from '@/helpers';
 
 import {
   NewsletterAgreementOptions,
@@ -12,53 +12,7 @@ import {
 
 import { computed } from 'vue';
 
-const siteData = getSiteData();
-
-interface IChildrensAge {
-  child_1_age?: number;
-  child_2_age?: number;
-  child_3_age?: number;
-  child_4_age?: number;
-  child_5_age?: number;
-  child_6_age?: number;
-};
-
-interface IAdultsAge {
-  adults_1_age?: number;
-  adults_2_age?: number;
-  adults_3_age?: number;
-  adults_4_age?: number;
-  adults_5_age?: number;
-  adults_6_age?: number;
-  adults_7_age?: number;
-  adults_8_age?: number;
-};
-
-function getAgeObj(type: string, ages: number[]) {
-  if(type === 'child') {
-    const childrensAge: IChildrensAge = {};
-    ages.forEach((item, idx) => {
-      const propName = `child_${idx + 1}_age`;
-      childrensAge[propName as keyof typeof childrensAge] = item;
-    })
-    return childrensAge;
-  }
-
-  if(type === 'adult') {
-    const adultsAge: IAdultsAge = {};
-    ages.forEach((item, idx) => {
-      const propName = `adult_${idx + 1}_age`;
-      adultsAge[propName as keyof typeof adultsAge] = item;
-    })
-    return adultsAge;
-  }
-}
-
-declare global { interface Window { dataLayer: any; } }
-
-const { formData, utmData } = useEnquiryForm();
-
-const getEcommerceID = () => window?.dataLayer?.ecommerce?.purchase?.actionField?.id;
+const { formData } = useEnquiryForm();
 
 const deal = computed(() => {
   const consent = formData.value.travelAgencyAgreementOptions === ''
@@ -79,19 +33,9 @@ const deal = computed(() => {
     ? `${formData.value.firstName || formData.value.emailAdress} - ${formData.value.preferredDestinations.join(',')}`
     : `${formData.value.firstName || formData.value.emailAdress}`;
 
-  const childrensAge = getAgeObj('child', formData.value.childrensAge);
-  const adultsAge = getAgeObj('adult', formData.value.adultsAge);
-
-  const dealOwner = formData.value.dealID ? null : 'lead@explorer.de';
-
   return {
     id: formData.value.dealID,
     properties: {
-      ...childrensAge,
-      ...adultsAge,
-      ...utmData.value,
-      transaction_id: getEcommerceID() || null,
-      deal_owner: dealOwner,
       dealname: dealName,
       destination: destination || null,
       metaitinerary: formData.value.metaItinerary || null,
@@ -114,6 +58,7 @@ const deal = computed(() => {
       shop_chosen: formData.value.travelAgency || null,
       sending_status: formData.value.sendingStatus,
       error_data: '',
+      transaction_id: formData.value.metaTransactionID,
     },
     associations: [
       {
@@ -138,14 +83,9 @@ const contact = computed(() => {
     ? null
     : formData.value.newsletterAgreement === NewsletterAgreementOptions.agreement;
 
-  const contactOwner = formData.value.contactID ? null : siteData.contact_owner;
-  const estBrand = `;${siteData.est_brand}`;
-  const childrensAge = getAgeObj('children', formData.value.childrensAge);
-
   return {
     id: formData.value.contactID,
     properties: {
-      ...childrensAge,
       email: formData.value.emailAdress,
       consent: consent,
       salutation: formData.value.salutationOption || null,
@@ -154,8 +94,6 @@ const contact = computed(() => {
       phone: formData.value.phoneNumber || null,
       repeat_client: repeat_client,
       newsletter_email: formData.value.newsLetterEmail || null,
-      est_brand: estBrand,
-      contact_owner: contactOwner,
     }
   }
 });

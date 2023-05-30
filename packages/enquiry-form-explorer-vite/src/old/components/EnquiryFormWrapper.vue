@@ -1,11 +1,11 @@
 <template>
-  <div class="lg:flex lg:justify-between font-primary" :class="getSite()">
+  <div class="lg:flex lg:justify-between font-primary">
     <div class="w-full lg:w-2/3">
       <nav
-        class="header-nav sticky top-0 z-50 flex justify-start items-center py-20 pl-16 lg:pl-32 xl:pl-64"
+        class="bg-grey-lighter sticky top-0 z-50 flex justify-start items-center py-20 pl-16 lg:pl-32 xl:pl-64"
       >
-        <a :href="siteData.domenUrl">
-          <img :alt="`${siteData.siteName} logo`" :src="getImageUrl(siteData.logoImg)" />
+        <a href="https://www.explorer.de/">
+          <img alt="Explorer logo" src="@/assets/logoEx.svg" />
         </a>
         <Stepper
           v-if="showStepper"
@@ -29,7 +29,7 @@
     <aside class="hidden lg:block h-screen w-1/3 sticky top-0">
       <img
         alt="Aside image"
-        :src="getImageUrl(siteData.sidebarImg)"
+        src="@/assets/sidebar.jpg"
         class="w-full h-full object-cover"
       />
     </aside>
@@ -40,7 +40,6 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { Stepper } from 'components-vue3';
-import { getSiteData, getSite, getImageUrl } from '@/helpers';
 
 export interface Props {
   showStepper?: boolean;
@@ -60,7 +59,7 @@ const stepperAvailableSteps: Step[] = [
   { key: '2', link: 'second' },
   { key: '3', link: 'third' },
 ];
-const siteData = getSiteData();
+
 const route = useRoute();
 const currentStep = computed(() => {
   switch (route.name) {
@@ -95,13 +94,4 @@ const currentStep = computed(() => {
 .slot-leave-active {
   transition: all 0.3s ease-in;
 }
-
-/***** SITES STYLES *****/
-.explorer .header-nav {
-  @apply bg-grey-lighter;
-}
-.stattravel .header-nav {
-  @apply bg-white;
-}
-/***** END SITES STYLES *****/
 </style>

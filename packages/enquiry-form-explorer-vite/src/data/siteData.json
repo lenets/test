@@ -1,0 +1,131 @@
+{
+  "stattravel": {
+    "siteName": "Stattravel",
+    "logoImg": "logoStattravel.svg",
+    "sidebarImg": "sidebarStattravel.jpg",
+    "domenUrl": "https://www.statravel.de/",
+    "firstStepTitle": "Plane deine Reise mit einem sta Reiseberater",
+    "secondStepTitle": "Erzähl uns mehr über deine Reise",
+    "datePickerStartLabel": "Beginn der Reise",
+    "datePickerEndLabel": "Ende der Reise",
+    "agencyList": [
+      "Berlin Mitte",
+      "Berlin Takustraße",
+      "Bremen",
+      "Dresden",
+      "Düsseldorf",
+      "Erlangen",
+      "Frankfurt",
+      "Freiburg",
+      "Göttingen",
+      "Hamburg",
+      "Hannover",
+      "Heidelberg",
+      "Karlsruhe",
+      "Köln",
+      "Leipzig",
+      "Mainz",
+      "München",
+      "Oldenburg",
+      "Osnabrück",
+      "Tübingen",
+      "Würzburg"
+    ],
+    "airportList": [
+      { "name": "Frankfurt" },
+      { "name": "Düsseldorf" },
+      { "name": "Hamburg" },
+      { "name": "Berlin" },
+      { "name": "München" },
+      { "name": "Wien" },
+      { "name": "Zürich" },
+      { "name": "Bern" }
+    ],
+    "est_brand": "STA",
+    "contact_owner": "lead@stattravel.de",
+    "thankYouLinks": [
+      {
+        "text": "Rundreisen",
+        "link": "#"
+      },
+      {
+        "text": "Camper & Co.",
+        "link": "#"
+      },
+      {
+        "text": "Versicherung",
+        "link": "#"
+      },
+      {
+        "text": "Flüge",
+        "link": "#"
+      },
+      {
+        "text": "Zur Homepage",
+        "link": "#"
+      }
+    ],
+    "conditionLink": "https://www.explorer.de/beratung/agb.html",
+    "privacyPolicyLink": "https://www.explorer.de/beratung/datenschutz.html"
+  },
+  "explorer": {
+    "siteName": "Explorer",
+    "logoImg": "logoEx.svg",
+    "sidebarImg": "sidebarEx.jpg",
+    "domenUrl": "https://www.statravel.de/",
+    "firstStepTitle": "Plane Deine Reise mit einem Explorer Reiseberater",
+    "secondStepTitle": "Erzähl uns mehr über Deine Reise.",
+    "datePickerStartLabel": "Beginn der Reise auswählen",
+    "datePickerEndLabel": "Ende der Reise auswählen",
+    "agencyList": [
+      "Dortmund",
+      "Dresden",
+      "Düsseldorf",
+      "Essen",
+      "Frankfurt",
+      "Hamburg",
+      "Hannover",
+      "Köln",
+      "Mannheim",
+      "München",
+      "Nürnberg",
+      "Stuttgart"
+    ],
+    "airportList": [
+      { "name": "Frankfurt" },
+      { "name": "Düsseldorf" },
+      { "name": "Hamburg" },
+      { "name": "Berlin" },
+      { "name": "München" },
+      { "name": "Wien" },
+      { "name": "Zürich" },
+      { "name": "Bern" }
+    ],
+    "est_brand": "Explorer",
+    "contact_owner": "leader@explorer.de",
+    "thankYouLinks": [
+      {
+        "text": "Alle Reisen",
+        "link": "https://www.explorer.de/reiseziele.html"
+      },
+      {
+        "text": "Mietwagen / Camper",
+        "link": "https://www.explorer.de/mietwagen-camper.html"
+      },
+      {
+        "text": "Hotels",
+        "link": "https://www.explorer.de/reisearten/hotels.html"
+      },
+      {
+        "text": "Flüge",
+        "link": "https://www.explorer.de/fluege.html"
+      },
+      {
+        "text": "Zur Homepage",
+        "link": "https://www.explorer.de/"
+      }
+    ],
+    "conditionLink": "https://www.explorer.de/beratung/agb.html",
+    "privacyPolicyLink": "https://www.explorer.de/beratung/datenschutz.html"
+  }
+}

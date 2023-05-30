@@ -3,7 +3,6 @@ import addMonths from 'date-fns/addMonths';
 import format from 'date-fns/format';
 import deLocale from 'date-fns/locale/de';
 import type { LocationQuery } from 'vue-router';
-import siteData from '@/data/siteData.json';
 
 export function getMonths(data: Date) {
   const arrayWithMonths = [];
@@ -65,22 +64,4 @@ export function prepareDestination(destinations: string[]) {
 
     return preparedDestination.trim().replace(/[\s-]/g, '_');
   }).join(';');
-}
-
-enum Sites {
-  explorer = 'explorer',
-  stattravel = 'stattravel'
-}
-export function getSite() : Sites {
-  let site = (process.env.SITE as unknown as keyof typeof Sites) ?? 'explorer';
-
-  return Sites[site]
-}
-
-export function getSiteData() {
-  return siteData[getSite()];
-}
-
-export const getImageUrl = (name : string) => {
-  return new URL(`/src/assets/${name}`, import.meta.url).href
 }
