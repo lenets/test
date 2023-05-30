@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-disabled {
+    @apply bg-grey-lighter cursor-not-allowed rounded-lg text-grey;
+    transition: transform linear;
+
+    &:focus {
+      @apply outline-black bg-grey-lighter;
+    }
+
+    &:hover {
+      @apply bg-grey-lighter outline-none;
+      transform: scale(1.01);
+    }
+  }
+
+  .btn-primary {
+    @apply bg-primary font-bold text-grey-lighter text-16 rounded-lg duration-300;
+    transition: transform linear;
+
+    &:disabled,
+    &.disabled {
+      @apply btn-disabled;
+    }
+
+    &:focus,
+    &:hover {
+      @apply bg-primary-light outline-none;
+      transform: scale(1.01);
+    }
+  }
+
+  .btn-secondary {
+    @apply bg-secondary font-bold text-grey-lighter text-16 rounded-lg duration-300;
+    transition: transform linear;
+
+    &:disabled,
+    &.disabled {
+      @apply btn-disabled;
+    }
+
+    &:focus,
+    &:hover {
+      @apply bg-secondary-light outline-none;
+      transform: scale(1.01);
+    }
+  }
+
+  .btn-primary-outline {
+    @apply border border-primary font-bold text-16 text-primary rounded-lg duration-300;
+    transition: transform linear;
+
+    &:disabled,
+    &.disabled {
+      @apply btn-disabled border-none;
+    }
+
+    &:focus,
+    &:hover {
+      @apply text-primary-light;
+      transform: scale(1.01);
+    }
+  }
+
+  .btn-secondary-outline {
+    @apply border border-secondary font-bold text-16 text-secondary rounded-lg duration-300;
+    transition: transform linear;
+
+    &:disabled,
+    &.disabled {
+      @apply btn-disabled border-none;
+    }
+
+    &:focus,
+    &:hover {
+      @apply text-secondary-light;
+      transform: scale(1.01);
+    }
+  }
+
+  .btn-gray-outline {
+    @apply border border-[#DDE2E4] text-14 text-[#252C32] rounded-lg duration-300;
+    transition: transform linear;
+
+    &:disabled,
+    &.disabled {
+      @apply btn-disabled border-none;
+    }
+
+    &:focus,
+    &:hover {
+      @apply text-[#252C32];
+      transform: scale(1.01);
+    }
+  }
+}
