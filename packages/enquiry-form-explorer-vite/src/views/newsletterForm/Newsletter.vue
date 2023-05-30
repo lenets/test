@@ -76,7 +76,7 @@ async function submitForm() {
 <template>
   <NewsletterWrapper>
     <div class="mt-48 mb-50">
-      <h1 class="mb-24 font-bold text-22 font-secondary text-primary">
+      <h1 class="step-title">
         Explorer Fernreisen Newsletter
       </h1>
       <div class="text-16 leading-7 font-secondary">

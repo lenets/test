@@ -1,7 +1,7 @@
 <template>
   <div class="lg:flex lg:justify-between" :class="getSite()">
     <div class="w-full lg:w-2/3">
-      <div class="bg-grey-lighter py-20 pl-16 lg:pl-32 xl:pl-64">
+      <div class="header-nav py-20 pl-16 lg:pl-32 xl:pl-64">
         <a
           class="flex flex-col items-end w-140 md:w-164"
           :href="siteData.domenUrl" target="_blank"
@@ -53,5 +53,11 @@ const siteData = getSiteData();
 }
 .slot-leave-active {
   transition: all 0.3s ease-in;
+}
+.explorer .header-nav {
+  @apply bg-grey-lighter;
+}
+.stattravel .header-nav {
+  @apply bg-white d-flex justify-center pl-0;
 }
 </style>
