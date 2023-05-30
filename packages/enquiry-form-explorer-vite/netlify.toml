@@ -1,6 +1,5 @@
 [build]
   publish = "dist"
-  command = 'yarn build:prod'
 
 [dev]
   targetPort = 5173
