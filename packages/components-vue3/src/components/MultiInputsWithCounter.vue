@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-[290px] font-secondary">
+  <div class="multi-inputs max-w-[290px] font-secondary">
       <Counter
-          class="mt-0 mb-0"
+          class="mt-0 mb-0 text-primary-dark"
           :title="counterTitle"
           :subTitle="counterSubTitle"
           :modelValue="counter"
@@ -10,13 +10,14 @@
           @update:modelValue="changeCounter($event)"
       />
       <div v-if="values.length" class="mt-12">
-          <p class="text-18 font-medium">{{ title }}</p>
-          <div class="mt-12">
+          <p class="multi-inputs__title text-18 leading-tight text-primary-dark min-h-[45px] flex items-center">{{ title }}</p>
+          <div>
               <div 
-                  class="flex items-start mt-12 input-wrapper font-medium" 
+                  class="item flex items-start mt-12 input-wrapper text-primary-dark"
+                  :class="itemsWrapperClasses"
                   v-for="value, idx in values"
               >
-                  <span class="mr-28 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
+                  <span class="mr-24 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
                   <NumberInput
                       :value="value === 0 ? '' : value"
                       :displayPlaceholder="false"
@@ -24,10 +25,10 @@
                       :max="maxValue"
                       placeholder="0"
                       inputClass="rounded font-secondary font-bold text-16 h-48 p-12 w-full border border-grey outline-primary w-[48px] h-[32px] text-center"
-                      @input="changeInputValue($event, idx)" 
+                      @input="changeInputValue($event, idx)"
                       @keydown="['e', 'E'].includes($event.key) && $event.preventDefault()"
                   />
-                  <span class="ml-8 mt-4">{{ afterInputTitle }}</span>
+                  <span class="ml-8 mt-4 text-18">{{ afterInputTitle }}</span>
               </div>
           </div>
       </div>
@@ -40,7 +41,7 @@ import NumberInput from './NumberInput.vue';
 
 export interface Props {
 counterTitle: string;
-counterSubTitle?: string;  
+counterSubTitle?: string;
 min?: number;
 max?: number;
 title: string;
@@ -49,7 +50,8 @@ afterInputTitle: string;
 counter?: number;
 values: number[];
 minValue?: number;
-maxValue?: number; 
+maxValue?: number;
+itemsWrapperClasses?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -86,6 +88,20 @@ function changeInputValue(number: number, idx: number) {
 </script> 
 
 <style scoped>
+/***** SITES STYLES *****/
+.explorer .multi-inputs__title {
+    @apply font-medium;
+}
+.stattravel .multi-inputs__title {
+    @apply font-semibold;
+}
+.explorer .item {
+    @apply font-medium;
+}
+.stattravel .item {
+    @apply font-semibold;
+}
+/***** END SITES STYLES *****/
 .counter-button {
 @apply flex items-center justify-center rounded-full border-primary w-32 h-32 border;
 }

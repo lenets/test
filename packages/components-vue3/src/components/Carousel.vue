@@ -3,6 +3,7 @@
     <button
       type="button"
       class="carousel-button mr-12"
+      :class="{disable: disableBtn === 'left'}"
       @click="slide(prevShift)"
     >
       <DropdownArrowIconVue class="rotate-90" />
@@ -13,6 +14,7 @@
     <button
       type="button"
       class="carousel-button ml-12"
+      :class="{disable: disableBtn === 'right'}"
       @click="slide(nextShift)"
     >
       <DropdownArrowIconVue class="-rotate-90" />
@@ -33,12 +35,23 @@ const props = withDefaults(defineProps<Props>(), {
 
 const prevShift = props.scrollValue * -1;
 const nextShift = props.scrollValue;
+const disableBtn = ref('left');
 
 const carouselContainer = ref<HTMLElement | null>(null);
 
 function slide(shift: number) {
   if (carouselContainer.value) {
+    const maxScrollLeft = carouselContainer.value.scrollWidth - carouselContainer.value.clientWidth;
+    const scrollLeft = carouselContainer.value.scrollLeft;
     carouselContainer.value.scrollBy({ left: shift, behavior: 'smooth' });
+    if(scrollLeft + shift < 0) {
+      disableBtn.value = 'left';
+    } else {
+      disableBtn.value = '';
+    }
+    if(scrollLeft + shift > maxScrollLeft) {
+      disableBtn.value = 'right';
+    }
   }
 }
 </script>
@@ -48,5 +61,12 @@ function slide(shift: number) {
 }
 .carousel-button {
   @apply hidden px-4 border border-primary rounded-full w-32 h-32 md:flex items-center justify-center;
+}
+.carousel-button.disable {
+  @apply border-[#c4c4c4];
+}
+
+.carousel-button.disable svg {
+  stroke: #c4c4c4;
 }
 </style>

@@ -78,7 +78,7 @@ defineEmits(['input', 'focus']);
 
 <style>
 .text-input-default {
-  @apply rounded text-grey-darkest text-16 h-48 p-12 w-full border border-grey outline-primary;
+  @apply rounded text-grey-darkest placeholder:text-[#777] text-16 p-12 w-full border border-grey outline-primary;
 
   &.has-icon {
     @apply pl-48;

@@ -92,6 +92,20 @@ onMounted(() => {
 </script>
 
 <style>
+/***** SITES STYLES *****/
+.explorer .multiselect-tag {
+  @apply border border-[#aaaaaa] font-medium;
+}
+
+.stattravel .multiselect-tag,
+.stattravel .multiselect-tags-search {
+  @apply font-semibold;
+}
+
+.explorer .multiselect-tags-search {
+  @apply font-medium;
+}
+/***** END SITES STYLES *****/
 .multiselect {
   @apply border border-grey px-12 py-8 min-h-[58px];
 }
@@ -109,10 +123,6 @@ div.multiselect-tags,
   padding: 0;
   margin: 0;
   @apply m-0 p-0;
-}
-
-.multiselect-tags-search {
-  @apply font-medium;
 }
 
 div.multiselect-tag {
@@ -140,7 +150,7 @@ div.multiselect-tags {
 .multiselect-tag {
   @apply flex justify-center items-center bg-primary text-16 font-semibold rounded-[8px] border border-[#aaaaaa];
   margin: 5px;
-  padding: 8px 6px 8px 14px;
+  padding: 6px 6px 6px 14px;
 }
 
 .multiselect-tag.is-default {
@@ -163,8 +173,8 @@ div.multiselect-tags {
 
 .multiselect-tag-remove {
   @apply bg-primary ml-8 rounded-full border border-2 border-white;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .multiselect-tag-remove.is-default-remove:not(:hover) {

@@ -18,4 +18,8 @@ defineProps<{
 }>();
 </script>
 
-<style></style>
+<style scoped>
+.stattravel legend {
+  @apply text-primary-dark
+ }
+</style>

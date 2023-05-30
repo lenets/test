@@ -5,7 +5,8 @@
       :value="value"
       :placeholder="placeholder"
       @focus="$emit('focus')"
-      class="cursor-pointer md:w-[264px]"
+      class="cursor-pointer md:w-[264px] placeholder-input"
+      :inputClass="inputClass"
     />
     <span v-if="errors" class="error-message"> {{ errors }}</span>
     <Datepicker
@@ -66,6 +67,7 @@ export interface Props {
   btnTextClear?: string;
   btnTextToday?: string;
   lang?: 'en' | 'de';
+  inputClass?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -158,4 +160,14 @@ function clearSelectedDate() {
   color: #9aa6ac;
   letter-spacing: -0.006em;
 }
+
+/***** SITES STYLES *****/
+.placeholder-input {
+  @apply mb-2;
+}
+
+.statravel .placeholder-input {
+  @apply mb-6;
+}
+/***** END SITES STYLES *****/
 </style>

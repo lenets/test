@@ -21,7 +21,7 @@ withDefaults(defineProps<Props>(), {
         <VerticalStepCheckIcon v-if="state === 'completed'" class="w-12 h-12" />
       </div>
     </div>
-    <div class="ml-24 font-secondary font-normal inline-block">{{ content }}</div>
+    <div class="ml-24 font-secondary font-normal text-primary-dark inline-block">{{ content }}</div>
   </div>
 </template>
 
@@ -38,6 +38,10 @@ withDefaults(defineProps<Props>(), {
   @apply bg-primary border-2 border-primary;
   /* box-shadow: Its temporary solution, have some porblems in tailwind config */
   box-shadow: inset 0 0 0 6px #eee;
+}
+
+.stattravel .step.active .circle {
+  box-shadow: inset 0 0 0 6px #fff;
 }
 
 .step:last-child .line {

@@ -17,7 +17,7 @@
           @change="$emit('update:modelValue', handleInputEvent($event))"
         />
         <span
-          class="active-fill inline-block rounded-full py-8 px-16 md:px-24 text-16 text-black"
+          class="active-fill inline-block rounded-full leading-none py-[9px] px-16 md:px-24 text-16 text-black"
         >
           {{ item.name }}
         </span>
@@ -37,6 +37,14 @@ defineEmits(['update:modelValue']);
 
 <style scoped>
 .switch-input:checked + .active-fill {
-  @apply text-white bg-primary ring-inset ring-1 ring-primary font-medium;
+  @apply text-white bg-primary ring-inset ring-1 ring-primary;
 }
+/***** SITES STYLES *****/
+.explorer .switch-input:checked + .active-fill {
+  @apply font-medium;
+}
+.stattravel .switch-input:checked + .active-fill {
+  @apply font-semibold;
+}
+/***** END SITES STYLES *****/
 </style>

@@ -3,10 +3,9 @@
     <div class="text-13 font-bold flex items-center flex-grow justify-center">
       <router-link :to="isPrevious ? { name: link } : ''">
         <div
-          class="rounded-full h-28 w-28 flex items-center justify-center flex-shrink-0"
+          class="rounded-full h-28 w-28 flex items-center justify-center flex-shrink-0 bg-primary-lighter"
           :class="[
-            active ? 'bg-primary-lighter' : 'bg-grey-light',
-            isPrevious ? 'cursor-pointer' : 'cursor-not-allowed',
+            isPrevious ? 'cursor-pointer prev' : 'cursor-not-allowed',
           ]"
         >
           <div
@@ -17,7 +16,7 @@
             ]"
           >
             <span
-              class="text-white font-secondary leading-none text-[12px]"
+              class="counter text-white font-secondary leading-none text-[12px]"
               :class="active ? 'text-white' : 'text-grey-dark'"
             >
               {{ stepNumber }}
@@ -47,8 +46,7 @@
         </span>
         <div
           v-show="hasSeparator"
-          class="w-16 ml-15 h-1 border-b"
-          :class="active ? 'border-primary' : 'border-grey-dark'"
+          class="w-16 ml-15 h-1 border-b border-grey-dark"
         ></div>
       </div>
     </div>
@@ -75,4 +73,14 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.prev {
+  @apply bg-[#C4C4C4];
+}
+.prev .counter {
+  @apply text-white;
+}
+.prev > div {
+  @apply bg-[#777];
+}
+</style>

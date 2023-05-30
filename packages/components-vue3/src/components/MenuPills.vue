@@ -13,7 +13,7 @@
         @change="$emit('change', getEmitedValue(item))"
       />
       <span
-        class="checked-fill inline-block rounded-full py-12 px-18 my-4 mr-12 text-primary leading-4 text-16 bg-white ring-inset ring-1 ring-primary"
+        class="checked-fill inline-block pill py-12 px-18 my-4 mr-12 text-primary leading-4 text-16 bg-white ring-inset ring-1 ring-primary"
       >
         {{ item }}
       </span>
@@ -63,6 +63,15 @@ defineEmits(['change']);
 }
 
 .input:hover + .checked-fill {
-  @apply ring-2;
+  @apply ring-2 font-bold;
 }
+
+/***** SITES STYLES *****/
+.explorer .pill {
+  @apply rounded-full;
+}
+.stattravel .pill {
+  @apply rounded-lg font-semibold;
+}
+/***** END SITES STYLES *****/
 </style>

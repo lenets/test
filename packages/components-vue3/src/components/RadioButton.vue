@@ -2,7 +2,7 @@
   <div>
     <div class="flex" :class="flexDirection">
       <div v-for="item in items" :key="item.id" class="mr-24 md:mr-50 my-8">
-        <label class="radio inline-flex items-center cursor-pointer relative">
+        <label class="radio inline-flex items-center cursor-pointer relative text-primary-dark">
           <input
             type="radio"
             class="input cursor-pointer"
@@ -57,7 +57,7 @@ function onChange(event: Event) {
 }
 
 .input[type='radio']::before {
-  @apply bg-white border border-grey-dark h-20 w-20 inline-block box-border rounded-full;
+  @apply bg-white border border-grey-dark h-24 w-24 inline-block box-border rounded-full;
   content: '';
   /* box-shadow: Its temporary solution, have some porblems in tailwind config */
   box-shadow: inset 0 0 0 6px #eeeeee;
@@ -69,4 +69,12 @@ function onChange(event: Event) {
   /* box-shadow: Its temporary solution, have some porblems in tailwind config */
   box-shadow: inset 0 0 0 6px #eeeeee;
 }
+
+/***** SITES STYLES *****/
+.stattravel .input[type='radio']::before,
+.stattravel .input[type='radio']:checked:before {
+  box-shadow: inset 0 0 0 6px #fff;
+  @apply border-primary;
+}
+/***** END SITES STYLES *****/
 </style>

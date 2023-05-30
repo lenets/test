@@ -14,9 +14,9 @@
           @change="$emit('change', getEmitedValue(item.id))"
         />
         <div
-          class="checked-fill text-black leading-4 ring-1 rounded-xl ring-grey-light bg-white"
+          class="month-wrapper checked-fill text-black leading-4 ring-1 rounded-xl ring-grey-light bg-white"
         >
-          <div class="flex flex-col items-center justify-center w-96 h-110">
+          <div class="flex flex-col items-center justify-center w-[89px] h-[104px]">
             <MonthPickerIcon class="month-picker-icon-fill" />
             <div class="mt-10 text-16">{{ item.name }}</div>
             <div class="mt-4 text-12">{{ item.year }}</div>
@@ -64,12 +64,15 @@ defineEmits(['change']);
 </script>
 
 <style scoped>
+.month-wrapper {
+  @apply text-[#c4c4c4];
+}
 .input:checked + .checked-fill {
-  @apply text-white bg-primary ring-primary-light;
+  @apply text-white bg-primary;
 }
 
 .input:hover + .checked-fill {
-  @apply transition ease-in-out ring-primary-light ring-2 duration-300;
+  @apply transition ease-in-out ring-2 duration-300;
 }
 
 .month-picker-icon-fill {
@@ -79,4 +82,21 @@ defineEmits(['change']);
 .input:checked + .checked-fill .month-picker-icon-fill {
   @apply text-white;
 }
+
+/***** SITES STYLES *****/
+.explorer .input:checked + .checked-fill {
+  @apply ring-primary-light;
+}
+
+.stattravel .input:checked + .checked-fill {
+  @apply ring-primary;
+}
+.explorer .input:hover + .checked-fill {
+  @apply ring-primary-light;
+}
+
+.stattravel .input:hover + .checked-fill {
+  @apply ring-primary;
+}
+/***** END SITES STYLES *****/
 </style>

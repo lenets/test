@@ -13,7 +13,7 @@
       @mousedown="onMouseDown($event, 0)"
     >
       <span
-        class="slider-range__value absolute text-primary text-12 font-semibold p-4 leading-4 ring-1 ring-inset ring-primary rounded-[4px] whitespace-nowrap mb-4 bg-white select-none"
+        class="slider-range__value absolute text-primary text-12 font-semibold p-4 leading-4 ring-1 ring-inset ring-[#777] rounded-[4px] whitespace-nowrap mb-4 bg-white select-none"
       >
         {{ currency }} {{ value[0] }}
       </span>
@@ -27,7 +27,7 @@
       @mousedown="onMouseDown($event, 1)"
     >
       <span
-        class="slider-range__value flex items-center absolute text-primary text-12 font-semibold leading-4 p-4 ring-1 ring-inset ring-primary rounded-[4px] whitespace-nowrap mb-4 bg-white select-none"
+        class="slider-range__value flex items-center absolute text-primary text-12 font-semibold leading-4 p-4 ring-1 ring-inset ring-[#777] rounded-[4px] whitespace-nowrap mb-4 bg-white select-none"
       >
         {{ currency }}
         {{ value[1] }}

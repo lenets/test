@@ -1,7 +1,7 @@
 <template>
   <div>
     <textarea
-      class="rounded placeholder-text-grey-dark text-black text-18 p-24 h-full w-full border border-grey resize-none leading-7 outline-primary"
+      class="rounded placeholder-text-grey-dark text-black h-full w-full border border-grey resize-none leading-7 outline-primary"
       :value="modelValue"
       :placeholder="placeholder"
       @input="$emit('update:modelValue', handleInputEvent($event).trim())"
@@ -22,4 +22,13 @@ defineProps<{
 defineEmits(['update:modelValue']);
 </script>
 
-<style scoped></style>
+<style scoped>
+textarea {
+  @apply text-18 p-16 leading-relaxed text-16;
+}
+/***** SITES STYLES *****/
+.stattravel textarea {
+  @apply text-right;
+}
+/***** END SITES STYLES *****/
+</style>
