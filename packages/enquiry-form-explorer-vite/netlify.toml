@@ -12,7 +12,7 @@ status = 200
 force = true
 [redirects.headers]
 Access-Control-Allow-Origin = "*"
-Authorization = "Bearer pat-eu1-bc799fe9-63f8-4faf-9070-972c600fd2fc"
+Authorization = "Bearer pat-eu1-eb6d47e7-af77-4bc4-b0a5-d96219bc645b"
 
 [[redirects]]
 from = "/*"
