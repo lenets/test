@@ -6,6 +6,8 @@
     "dev:explorer": "cross-env SITE=explorer vite",
     "dev:stattravel": "cross-env SITE=stattravel vite",
     "build": "run-p type-check build-only",
+    "build:explorer": "cross-env SITE=explorer run-p type-check build-prod",
+    "build:stattravel": "cross-env SITE=stattravel run-p type-check build-prod",
     "build:prod": "run-p type-check build-prod",
     "preview": "vite preview --port 4173",
     "test": "echo 'no tests in this project'",
