@@ -1,4 +1,4 @@
-import destinationList from './destinationList.json';
+import destinationList from './data/destinationList.json';
 
 export const newsletterDataSchema = {
   salutationOption: '',
