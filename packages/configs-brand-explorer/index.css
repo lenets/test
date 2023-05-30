@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;500;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,6 +35,15 @@
     }
   }
 
+  .stattravel .btn-primary {
+    @apply rounded-3xl tracking-[1px];
+
+    &:focus,
+    &:hover {
+      @apply bg-primary;
+    }
+  }
+
   .btn-secondary {
     @apply bg-secondary font-bold text-grey-lighter text-16 rounded-lg duration-300;
     transition: transform linear;
@@ -49,8 +60,12 @@
     }
   }
 
+  .stattravel .btn-secondary {
+    @apply bg-primary rounded-3xl px-32;
+  }
+
   .btn-primary-outline {
-    @apply border border-primary font-bold text-16 text-primary rounded-lg duration-300;
+    @apply border border-primary font-bold text-16 text-primary rounded-lg duration-300 flex items-center;
     transition: transform linear;
 
     &:disabled,
@@ -62,6 +77,15 @@
     &:hover {
       @apply text-primary-light;
       transform: scale(1.01);
+    }
+  }
+
+  .stattravel .btn-primary-outline {
+    @apply rounded-3xl border-2 w-auto py-16 px-28 flex items-center;
+
+    &:focus,
+    &:hover {
+      @apply text-primary;
     }
   }
 
@@ -95,5 +119,13 @@
       @apply text-[#252C32];
       transform: scale(1.01);
     }
+  }
+
+  .step-title {
+    @apply mb-40 md:mb-48 font-bold text-22 text-primary font-secondary;
+  }
+
+  .stattravel .step-title {
+    @apply text-28;
   }
 }
