@@ -65,7 +65,7 @@
   }
 
   .btn-primary-outline {
-    @apply border border-primary font-bold text-16 text-primary rounded-lg duration-300 flex items-center;
+    @apply border border-primary font-bold text-16 text-primary rounded-lg duration-300 flex items-center justify-center;
     transition: transform linear;
 
     &:disabled,
