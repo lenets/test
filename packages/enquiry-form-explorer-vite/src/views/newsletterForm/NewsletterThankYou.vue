@@ -11,7 +11,7 @@
         </p>
         <p class="mt-24">Wir freuen uns darauf, dich für einzigartige Reise-Erlebnisse zu begeistern.</p>
       </div>
-      <div class="cards">
+      <div class="cards mt-48">
         <h2 class="cards__title font-secondary text-primary-dark text-18 font-semibold">Vielleicht findest du schon eine spannende Reise bei uns?</h2>
         <div class="md:flex mt-24 mb-24 justify-between">
           <div class="card" v-for="card in siteData.thankYouCards">
