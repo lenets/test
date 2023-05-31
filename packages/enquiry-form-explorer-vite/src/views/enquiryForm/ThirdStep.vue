@@ -172,7 +172,7 @@ async function submitForm() {
 
         <div class="md:flex justify-between">
           <Button
-            class="btn-primary-outline h-48 w-full md:w-auto mb-24 md:mb-0"
+            class="btn-primary-outline h-48 px-28 py-16 w-full md:w-auto mb-24 md:mb-0"
             @click="router.push({ name: 'second' })"
             type="button"
           >
