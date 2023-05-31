@@ -1,5 +1,4 @@
 import destinationList from './data/destinationList.json';
-import agencyList from './data/agencyList.json';
 import { getSiteData } from './helpers';
 const siteData = getSiteData();
 
