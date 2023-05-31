@@ -20,7 +20,7 @@
   }
 
   .btn-primary {
-    @apply bg-primary font-bold text-grey-lighter text-16 rounded-lg duration-300;
+    @apply bg-primary font-bold text-grey-lighter text-16 rounded-lg duration-300 flex justify-center items-center;
     transition: transform linear;
 
     &:disabled,
