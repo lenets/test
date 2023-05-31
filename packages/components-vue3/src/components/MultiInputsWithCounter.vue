@@ -17,7 +17,7 @@
                   :class="itemsWrapperClasses"
                   v-for="value, idx in values"
               >
-                  <span class="before-item-title mr-24 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
+                  <span class="text-18 mr-24 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
                   <NumberInput
                       :value="value === 0 ? '' : value"
                       :displayPlaceholder="false"
@@ -89,9 +89,6 @@ function changeInputValue(number: number, idx: number) {
 
 <style scoped>
 /***** SITES STYLES *****/
-.explorer .before-item-title {
-    @apply text-18;
-}
 .explorer .multi-inputs__title {
     @apply font-medium;
 }
