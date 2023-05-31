@@ -172,7 +172,7 @@ async function submitForm() {
 
         <div class="md:flex justify-between">
           <Button
-            class="btn-primary-outline h-48 px-28 py-16 w-full md:w-auto mb-24 md:mb-0"
+            class="btn-primary-outline prev-btn h-48 px-28 py-16 w-full md:w-auto mb-24 md:mb-0"
             @click="router.push({ name: 'second' })"
             type="button"
           >
@@ -195,5 +195,8 @@ async function submitForm() {
 <style scoped>
 .explorer .submit-btn {
   @apply py-10 px-16 min-w-[336px] flex items-center justify-center;
+}
+.stattravel .prev-btn {
+  @apply w-full;
 }
 </style>
