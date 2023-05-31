@@ -182,7 +182,7 @@ router.replace('/');
           <img class="rounded-[8px]" :src="formData.metaThumbnailUrl" :alt="formData.metaDestination">
         </div>
         <div class="font-secondary">
-          <h2 class="text-18 font-bold mb-16">{{ formData.metaDestination }}</h2>
+          <h2 class="text-18 font-bold mb-16 text-primary-dark">{{ formData.metaDestination }}</h2>
           <span class="text-primary font-semibold font-18" v-if="formData.metaPrice">ab € {{ new Intl.NumberFormat('de-DE').format(+formData.metaPrice) }},-</span>
         </div>
       </div>
