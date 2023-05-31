@@ -3,7 +3,7 @@
     <div class="w-full lg:w-2/3">
       <div class="header-nav py-20 pl-16 lg:pl-32 xl:pl-64">
         <a
-          class="flex flex-col items-end w-140 md:w-164"
+          class="logo flex flex-col items-end w-140 md:w-164"
           :href="siteData.domenUrl" target="_blank"
         >
           <img :alt="`${siteData.siteName} logo`" :src="getImageUrl(siteData.logoImg)" />
@@ -59,5 +59,8 @@ const siteData = getSiteData();
 }
 .stattravel .header-nav {
   @apply bg-white flex justify-center pl-0;
+}
+.stattravel .logo {
+  @apply items-center;
 }
 </style>
