@@ -24,6 +24,7 @@
     "components-vue3": "*",
     "configs-brand-explorer": "*",
     "pinia": "^2.0.21",
+    "vite-plugin-favicons-inject": "^2.2.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
