@@ -33,7 +33,7 @@ import parse from 'date-fns/parse';
 
 import { useEnquiryForm } from '@/useEnquiryForm';
 import { proccess } from '@/hubspot';
-import { useRouter, useRoute, type LocationQuery } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 import IconEmail from '@/components/icons/IconEmail.vue';
 import EnquiryFormWrapper from '@/components/EnquiryFormWrapper.vue';

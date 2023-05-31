@@ -10,7 +10,7 @@ import {
   Submit,
 } from 'components-vue3';
 
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import { useNewsletterForm } from '@/useNewsletterForm';
 import { proccess } from '@/newsLetterHubspot';
 
@@ -27,12 +27,20 @@ import {
 import { ref } from 'vue';
 
 const router = useRouter();
+const route = useRoute();
+const urlParams: any = route.query;
+const { formData, utmData, validateForm, getFieldErrors, scrollToErrorMessage } = useNewsletterForm();
 
-const { formData, validateForm, getFieldErrors, scrollToErrorMessage } = useNewsletterForm();
+
+for (let key in urlParams) {
+  if(key === 'utm_campaign' || key === 'utm_medium' || key === 'utm_source') {
+    utmData.value[key] = urlParams[key];
+  }
+}
 
 function isFormValid() {
   return validateForm([
-    'emailAdress', 
+    'emailAdress',
     'salutationOption',
     'preferredDestinations',
     'preferredLeisureType',

@@ -1,14 +1,24 @@
 import { computed, ref, watch, type Ref } from 'vue';
-import { newsletterDataSchema } from './newsletterContentData';
+import { newsletterDataSchema, utmDataSchema } from './newsletterContentData';
 import { getDataFromStorage, saveOnSessionStorage } from './helpers';
 
 const formData = ref<typeof newsletterDataSchema>();
+const utmData = ref<typeof utmDataSchema>();
 const dataFromStorage = getDataFromStorage('newsletterSessionData');
+const utmDataFormStorage = getDataFromStorage('utmSessionData');
 
 watch(
   formData,
   (newData) => {
     saveOnSessionStorage('newsletterSessionData', newData);
+  },
+  { deep: true }
+);
+
+watch(
+  utmData,
+  (newData) => {
+    saveOnSessionStorage('utmSessionData', newData)
   },
   { deep: true }
 );
@@ -68,8 +78,15 @@ export function useNewsletterForm() {
     formData.value = newsletterDataSchema;
   }
 
+  if (utmDataFormStorage) {
+    utmData.value = utmDataFormStorage;
+  } else {
+    utmData.value = utmDataSchema;
+  }
+
   return {
     formData: formData as Ref<typeof newsletterDataSchema>,
+    utmData: utmData as Ref<typeof utmDataSchema>,
     validateForm,
     getFieldErrors,
     scrollToErrorMessage,

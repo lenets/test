@@ -11,6 +11,12 @@ export const newsletterDataSchema = {
   contactID: '',
 };
 
+export const utmDataSchema = {
+  utm_campaign: '',
+  utm_medium: '',
+  utm_source: '',
+};
+
 export const destinationsOptions = destinationList
   .map((item) => ({
     name: item.Country,

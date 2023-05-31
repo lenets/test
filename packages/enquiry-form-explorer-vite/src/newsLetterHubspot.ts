@@ -1,12 +1,15 @@
-import { prepareDestination } from './helpers';
+import { prepareDestination, getSiteData } from './helpers';
 import { useNewsletterForm } from './useNewsletterForm';
 import { computed } from 'vue';
 
-const { formData } = useNewsletterForm();
+const { formData, utmData } = useNewsletterForm();
+const siteData = getSiteData();
 
 
 const contact = computed(() => {
   const destination = prepareDestination(formData.value.preferredDestinations);
+  const contactOwner = formData.value.contactID ? null : siteData.contact_owner;
+  const estBrand = `;${siteData.est_brand}`;
 
   return {
     id: formData.value.contactID,
@@ -18,6 +21,8 @@ const contact = computed(() => {
       destination: destination || null,
       travel_type: formData.value.preferredLeisureType.join(';'),
       consent: formData.value.newsletterAgreement.length !== 0,
+      est_brand: estBrand,
+      contact_owner: contactOwner,
     }
   }
 })
