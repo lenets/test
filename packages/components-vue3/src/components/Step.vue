@@ -16,7 +16,7 @@
             ]"
           >
             <span
-              class="counter text-white font-secondary leading-none text-[12px]"
+              class="counter font-secondary leading-none text-[12px]"
               :class="active ? 'text-white' : 'text-grey-dark'"
             >
               {{ stepNumber }}
