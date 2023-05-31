@@ -338,7 +338,7 @@ router.replace('/');
                   itemsWrapperClasses="justify-end"
                 />
               </div>
-              <div class="multi-inputs-wrapper ml-auto">
+              <div class="multi-inputs-wrapper md:ml-auto">
                 <MultiInputsWithCounter
                   class="mt-0 mb-0 font-secondary"
                   counterTitle="Kinder"
