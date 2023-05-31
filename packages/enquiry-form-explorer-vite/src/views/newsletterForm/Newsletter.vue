@@ -171,7 +171,7 @@ async function submitForm() {
         <div class="flex justify-center">
           <Submit
             v-if="!isPending"
-            class="btn-secondary h-48 py-10 px-16 w-full md:w-auto"
+            class="btn-secondary submit-btn h-48 py-10 px-16 w-full md:w-auto"
             >Newsletter anfordern</Submit
           >
 
@@ -191,3 +191,12 @@ async function submitForm() {
     </div>
   </NewsletterWrapper>
 </template>
+
+<style scoped>
+.explorer .step-title {
+  @apply mb-24;
+}
+.explorer .submit-btn {
+  @apply py-16 px-28 min-w-[234px] flex items-center justify-center;
+}
+</style>
