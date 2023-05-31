@@ -132,7 +132,7 @@ div.multiselect-tag {
 }
 
 div.multiselect-tags {
-  @apply gap-x-[10px] gap-y-[12px] ml-[12px]
+  @apply gap-x-[10px] gap-y-[20px] ml-[12px]
 }
 
 .multiselect-tags-search-wrapper {
