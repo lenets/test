@@ -1,7 +1,7 @@
 <template>
   <div class="multi-inputs max-w-[290px] font-secondary">
       <Counter
-          class="mt-0 mb-0 text-primary-dark"
+          class="mt-0 mb-0 text-primary-dark counter"
           :title="counterTitle"
           :subTitle="counterSubTitle"
           :modelValue="counter"
@@ -118,5 +118,8 @@ margin: 0;
 }
 .counter-input[type='number'] {
 -moz-appearance: textfield;
+}
+.stattravel .counter label > div:first-child {
+    @apply font-semibold;
 }
 </style>
