@@ -429,7 +429,7 @@ router.replace('/');
   @apply max-w-[275px];
 }
 .explorer .submit-btn {
-  @apply py-16 px-28;
+  @apply py-16 px-28 min-w-[280px] d-flex items-center justify-center;
 }
 .stattravel .submit-btn {
   @apply py-10 px-24;
