@@ -81,7 +81,11 @@ const siteData = getSiteData();
   display: flex;
   align-items: center;
   justify-content: center;
-  @apply rounded-[8px] font-extrabold bg-primary text-white font-primary h-48 py-10 px-24 text-center w-full;
+  @apply rounded-[8px] font-extrabold bg-primary text-white font-primary h-48 py-10 px-24 text-center w-full flex items-center justify-center;
+}
+
+.stattravel .primary-btn {
+  @apply rounded-3xl;
 }
 .primary-btn:hover {
   transform: scale(1.01);
