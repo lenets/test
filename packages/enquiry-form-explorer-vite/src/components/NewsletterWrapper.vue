@@ -35,7 +35,7 @@ const siteData = getSiteData();
 
 </script>
 
-<style>
+<style scoped>
 .main-content {
   max-width: 600px;
   width: 100%;

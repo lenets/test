@@ -32,14 +32,30 @@
       "Würzburg"
     ],
     "airportList": [
-      { "name": "Frankfurt" },
-      { "name": "Düsseldorf" },
-      { "name": "Hamburg" },
-      { "name": "Berlin" },
-      { "name": "München" },
-      { "name": "Wien" },
-      { "name": "Zürich" },
-      { "name": "Bern" }
+      {
+        "name": "Frankfurt"
+      },
+      {
+        "name": "Düsseldorf"
+      },
+      {
+        "name": "Hamburg"
+      },
+      {
+        "name": "Berlin"
+      },
+      {
+        "name": "München"
+      },
+      {
+        "name": "Wien"
+      },
+      {
+        "name": "Zürich"
+      },
+      {
+        "name": "Bern"
+      }
     ],
     "est_brand": "STA",
     "contact_owner": "lead@stattravel.de",
@@ -63,6 +79,24 @@
       {
         "text": "Zur Homepage",
         "link": "#"
+      }
+    ],
+    "thankYouCards": [
+      {
+        "imageUrl": "specialOffersPhoto-2.jpg",
+        "text": "Wir helfen Dir günstig, die schönsten Reise-Momente zu erleben. Mit immer neuen Angeboten.",
+        "button": {
+          "text": "Reise-Deals",
+          "link": "#"
+        }
+      },
+      {
+        "imageUrl": "travelBlogsPhoto-3.jpg",
+        "text": "Unsere Reiseberater reisen passioniert. Hier teilen sie ihre Erfahrungen und Erlebnisse.",
+        "button": {
+          "text": "Reiseinspiration",
+          "link": "#"
+        }
       }
     ],
     "conditionLink": "https://www.explorer.de/beratung/agb.html",
@@ -92,14 +126,30 @@
       "Stuttgart"
     ],
     "airportList": [
-      { "name": "Frankfurt" },
-      { "name": "Düsseldorf" },
-      { "name": "Hamburg" },
-      { "name": "Berlin" },
-      { "name": "München" },
-      { "name": "Wien" },
-      { "name": "Zürich" },
-      { "name": "Bern" }
+      {
+        "name": "Frankfurt"
+      },
+      {
+        "name": "Düsseldorf"
+      },
+      {
+        "name": "Hamburg"
+      },
+      {
+        "name": "Berlin"
+      },
+      {
+        "name": "München"
+      },
+      {
+        "name": "Wien"
+      },
+      {
+        "name": "Zürich"
+      },
+      {
+        "name": "Bern"
+      }
     ],
     "est_brand": "Explorer",
     "contact_owner": "leader@explorer.de",
@@ -123,6 +173,24 @@
       {
         "text": "Zur Homepage",
         "link": "https://www.explorer.de/"
+      }
+    ],
+    "thankYouCards": [
+      {
+        "imageUrl": "specialOffersPhoto-2.jpg",
+        "text": "Wir helfen Dir günstig, die schönsten Reise-Momente zu erleben. Mit immer neuen Angeboten.",
+        "button": {
+          "text": "Aktionsangebote",
+          "link": "https://www.explorer.de/aktionen.html"
+        }
+      },
+      {
+        "imageUrl": "travelBlogsPhoto-2.jpg",
+        "text": "Unsere Reiseberater reisen passioniert. Hier teilen sie ihre Erfahrungen und Erlebnisse.",
+        "button": {
+          "text": "Reiseberichte",
+          "link": "https://www.explorer.de/kampagnen/reiseberichte.html"
+        }
       }
     ],
     "conditionLink": "https://www.explorer.de/beratung/agb.html",

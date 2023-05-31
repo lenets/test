@@ -6,7 +6,7 @@ import { ref } from 'vue';
 import { NewsletterAgreementOptions } from '@/enquiryContentData';
 import EnquiryFormWrapper from '@/components/EnquiryFormWrapper.vue';
 import { proccess } from '@/hubspot';
-import { getSiteData } from '@/helpers';
+import { getSiteData, getImageUrl } from '@/helpers';
 
 const { formData } = useEnquiryForm();
 const siteData = getSiteData();
@@ -99,39 +99,20 @@ async function submitForm() {
           Können wir dich für weitere spannende Reise-Inhalte begeistern?
         </h2>
         <div class="md:flex mb-40 justify-between">
-          <div class="card">
+          <div class="card" v-for="card in siteData.thankYouCards">
             <div class="h-160 mb-24">
               <img
                 class="w-full h-full object-cover rounded-[8px] max-w-[250px] ml-auto mr-auto"
-                src="@/assets/specialOffersPhoto-2.jpg"
+                :src="getImageUrl(card.imageUrl)"
                 alt="Special Offers Photo"
               />
             </div>
             <p class="card__txt font-secondary font-medium tracking-[.5px] text-16 my-24">
-              Wir helfen Dir günstig, die schönsten Reise-Momente zu erleben. 
-              Mit immer neuen Angeboten. 
+              {{ card.text }}
             </p>
-            <a href="https://www.explorer.de/aktionen.html">
+            <a :href="card.button.link">
               <div class="primary-btn">
-                Aktionsangebote
-              </div>
-            </a>
-          </div>
-          <div class="card">
-            <div class="h-160 mb-24 rounded-2xl">
-              <img
-                class="w-full h-full object-cover rounded-[8px] max-w-[250px] ml-auto mr-auto"
-                src="@/assets/travelBlogsPhoto-2.jpg"
-                alt="Travel Blogs Photo"
-              />
-            </div>
-            <p class="card__txt font-secondary font-medium tracking-[.5px] text-16 my-24">
-              Unsere Reiseberater reisen passioniert. Hier teilen sie ihre
-              Erfahrungen und Erlebnisse.
-            </p>
-            <a href="https://www.explorer.de/kampagnen/reiseberichte.html">
-              <div class="primary-btn">
-                Reiseberichte
+                {{ card.button.text }}
               </div>
             </a>
           </div>

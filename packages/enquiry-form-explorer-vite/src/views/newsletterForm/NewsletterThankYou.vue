@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import NewsletterWrapper from '@/components/NewsletterWrapper.vue';
-import { getSiteData } from '@/helpers';
-const siteData = getSiteData();
-</script>
-
 <template>
   <NewsletterWrapper>
     <div>
@@ -20,39 +14,20 @@ const siteData = getSiteData();
       <div class="cards">
         <h2 class="cards__title font-secondary text-primary-dark text-18 font-semibold">Vielleicht findest du schon eine spannende Reise bei uns?</h2>
         <div class="md:flex mt-24 mb-24 justify-between">
-          <div class="card">
+          <div class="card" v-for="card in siteData.thankYouCards">
             <div class="h-160 mb-24">
               <img
                 class="w-full h-full object-cover rounded-[8px] max-w-[250px] ml-auto mr-auto"
-                src="@/assets/specialOffersPhoto-2.jpg"
+                :src="getImageUrl(card.imageUrl)"
                 alt="Special Offers Photo"
               />
             </div>
             <p class="card__txt font-secondary font-medium tracking-[.5px] text-lightgrey text-16 my-24">
-              Wir helfen Dir günstig, die schönsten Reise-Momente zu erleben.
-              Mit immer neuen Angeboten.
+              {{ card.text }}
             </p>
-            <a href="https://www.explorer.de/aktionen.html">
+            <a :href="card.button.link">
               <div class="primary-btn">
-                  Aktionsangebote
-              </div>
-            </a>
-          </div>
-          <div class="card">
-            <div class="h-160 mb-24 rounded-2xl">
-              <img
-                class="w-full h-full object-cover rounded-[8px] max-w-[250px] ml-auto mr-auto"
-                src="@/assets/travelBlogsPhoto-2.jpg"
-                alt="Travel Blogs Photo"
-              />
-            </div>
-            <p class="card__txt font-secondary font-medium tracking-[.5px] text-lightgrey text-16 my-24">
-              Unsere Reiseberater reisen passioniert. Hier teilen sie ihre 
-              Erfahrungen und Erlebnisse.
-            </p>
-            <a href="https://www.explorer.de/kampagnen/reiseberichte.html">
-              <div class="primary-btn">
-                Reiseberichte
+                  {{ card.button.text }}
               </div>
             </a>
           </div>
@@ -66,6 +41,12 @@ const siteData = getSiteData();
     </div>
   </NewsletterWrapper>
 </template>
+
+<script setup lang="ts">
+import NewsletterWrapper from '@/components/NewsletterWrapper.vue';
+import { getSiteData, getImageUrl } from '@/helpers';
+const siteData = getSiteData();
+</script>
 
 <style scoped>
 .stattravel .footer-links {
