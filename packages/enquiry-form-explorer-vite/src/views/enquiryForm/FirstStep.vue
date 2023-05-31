@@ -432,6 +432,6 @@ router.replace('/');
   @apply py-16 px-28 min-w-[280px] flex items-center justify-center;
 }
 .stattravel .submit-btn {
-  @apply py-10 px-24;
+  @apply py-10 px-24 min-w-[267px];
 }
 </style>
