@@ -113,4 +113,10 @@ function getValidatedValue(value: number) {
 .counter-input[type='number'] {
   -moz-appearance: textfield;
 }
+.stattravel label > div:first-child {
+    @apply font-semibold;
+}
+.stattravel label > div:nth-child(2) {
+    @apply font-medium;
+}
 </style>
