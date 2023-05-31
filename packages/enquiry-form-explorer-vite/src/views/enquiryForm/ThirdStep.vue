@@ -172,7 +172,7 @@ async function submitForm() {
 
         <div class="md:flex justify-between">
           <Button
-            class="btn-primary-outline submit-btn h-48 w-full md:w-auto mb-24 md:mb-0"
+            class="btn-primary-outline h-48 w-full md:w-auto mb-24 md:mb-0"
             @click="router.push({ name: 'second' })"
             type="button"
           >
@@ -181,7 +181,7 @@ async function submitForm() {
 
           <Submit
             v-if="!isPending"
-            class="btn-secondary h-48 py-10 px-16 w-full md:w-auto"
+            class="btn-secondary submit-btn h-48 py-10 px-16 w-full md:w-auto"
             >Jetzt meine Traumreise anfragen</Submit
           >
 
