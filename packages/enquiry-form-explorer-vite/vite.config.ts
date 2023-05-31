@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
 const { getTailwindConfig } = require('configs-brand-explorer/tailwind.config');
 
 const site = process.env.SITE || 'explorer';
@@ -42,7 +43,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {
-      'SITE' : site,
+      'SITE': site,
     }
   }
 });
