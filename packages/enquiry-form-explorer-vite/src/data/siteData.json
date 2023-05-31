@@ -26,6 +26,7 @@
       "Leipzig",
       "Mainz",
       "München",
+      "Münster",
       "Oldenburg",
       "Osnabrück",
       "Tübingen",
@@ -56,6 +57,21 @@
       {
         "name": "Bern"
       }
+    ],
+    "preferredLeisureTypeList": [
+      "Rundreisen",
+      "Aktivreisen",
+      "Safaris",
+      "Strand & Entspannung",
+      "Städtereisen",
+      "Mietwagen-Rundreisen",
+      "Camper",
+      "Kreuzfahrten",
+      "Familienreisen",
+      "Round-the-World",
+      "Gruppenreisen",
+      "Young Travel",
+      "Nur Flug"
     ],
     "est_brand": "STA",
     "contact_owner": "lead@stattravel.de",
@@ -150,6 +166,18 @@
       {
         "name": "Bern"
       }
+    ],
+    "preferredLeisureTypeList": [
+      "Rundreisen",
+      "Aktivreisen",
+      "Safaris",
+      "Strand & Entspannung",
+      "Städtereisen",
+      "Mietwagen-Rundreisen",
+      "Camper",
+      "Kreuzfahrten",
+      "Familienreisen",
+      "Gruppenreisen"
     ],
     "est_brand": "Explorer",
     "contact_owner": "leader@explorer.de",

@@ -1,5 +1,7 @@
 import destinationList from './data/destinationList.json';
 import agencyList from './data/agencyList.json';
+import { getSiteData } from './helpers';
+const siteData = getSiteData();
 
 export enum PickedDateSelectionOption {
   calendars = 'Ja',
@@ -95,19 +97,7 @@ export const departureAirportsOptions = [
   { name: 'Bern' },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
-export const preferredLeisureTypeList: Array<string> = [
-  'Rundreisen',
-  'Aktivreisen',
-  'Safaris',
-  'Strand & Entspannung',
-  'Städtereisen',
-  'Mietwagen-Rundreisen',
-  'Camper',
-  'Mietwagenreisen',
-  'Kreuzfahrten',
-  'Familienreisen',
-  'Sonstiges',
-];
+export const preferredLeisureTypeList: Array<string> = siteData.preferredLeisureTypeList;
 
 export const additionalUserCommentPlaceholder =
   'Beschreibe kurz deinem Reiseberater, was du dir von deiner Reise wünschst. Das hilft uns ein Angebot zu erstellen, das wirklich zu deinen Vorstellungen passt - zum Beispiel besondere Erlebnisse oder Sehenswürdigkeiten, die nicht fehlen dürfen oder Verpflegungsart, Art der Unterkunft etc.';
@@ -157,7 +147,7 @@ export const travelAgencyAgreementOptions: any = [
 export const agencyItems: {
   id: string,
   name: string
-}[] = agencyList
+}[] = siteData.agencyList
   .map((item, idx) => ({
     id: `${idx}`,
     name: item

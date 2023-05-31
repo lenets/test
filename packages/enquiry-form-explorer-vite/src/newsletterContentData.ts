@@ -1,4 +1,6 @@
 import destinationList from './data/destinationList.json';
+import { getSiteData } from './helpers';
+const siteData = getSiteData();
 
 export const newsletterDataSchema = {
   salutationOption: '',
@@ -24,19 +26,7 @@ export const destinationsOptions = destinationList
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
-export const preferredLeisureTypeList = [
-  'Rundreisen',
-  'Aktivreisen',
-  'Safaris',
-  'Strand & Entspannung',
-  'Städtereisen',
-  'Mietwagen-Rundreisen',
-  'Camper',
-  'Mietwagenreisen',
-  'Kreuzfahrten',
-  'Familienreisen',
-  'Sonstiges',
-];
+export const preferredLeisureTypeList = siteData.preferredLeisureTypeList;
 
 export const salutationOptions = [
   {
