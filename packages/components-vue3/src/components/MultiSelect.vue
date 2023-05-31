@@ -94,7 +94,7 @@ onMounted(() => {
 <style>
 /***** SITES STYLES *****/
 .explorer .multiselect-tag {
-  @apply border border-[#aaaaaa] font-medium;
+  @apply font-medium;
 }
 
 .stattravel .multiselect-tag,
@@ -148,7 +148,7 @@ div.multiselect-tags {
 }
 
 .multiselect-tag {
-  @apply flex justify-center items-center bg-primary text-16 font-semibold rounded-[8px] border border-[#aaaaaa];
+  @apply flex justify-center items-center bg-primary text-16 font-semibold rounded-[8px];
   margin: 5px;
   padding: 6px 6px 6px 14px;
 }
