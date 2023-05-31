@@ -321,7 +321,7 @@ router.replace('/');
         <fieldset class="mb-48">
           <PointerHeading title="Mit wem wirst Du reisen? *" />
           <div class="grid gap-50 grid-cols-1 md:grid-cols-[auto_auto] items-start">
-              <div class="max-w-[275px]">
+              <div class="multi-inputs-wrapper">
                 <MultiInputsWithCounter
                   class="mt-0 mb-0 font-secondary"
                   counterTitle="Erwachsene"
@@ -338,7 +338,7 @@ router.replace('/');
                   itemsWrapperClasses="justify-end"
                 />
               </div>
-              <div class="max-w-[275px] ml-auto">
+              <div class="multi-inputs-wrapper ml-auto">
                 <MultiInputsWithCounter
                   class="mt-0 mb-0 font-secondary"
                   counterTitle="Kinder"
@@ -420,5 +420,11 @@ router.replace('/');
 <style scoped>
 .footer-text {
   @apply font-secondary text-[#333];
+}
+.explorer .multi-inputs-wrapper {
+  @apply max-w-[280px];
+}
+.stattravel .multi-inputs-wrapper {
+  @apply max-w-[275px];
 }
 </style>

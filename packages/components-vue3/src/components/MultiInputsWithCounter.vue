@@ -12,12 +12,12 @@
       <div v-if="values.length" class="mt-12">
           <p class="multi-inputs__title text-18 leading-tight text-primary-dark min-h-[45px] flex items-center">{{ title }}</p>
           <div>
-              <div 
+              <div
                   class="item flex items-start mt-12 input-wrapper text-primary-dark"
                   :class="itemsWrapperClasses"
                   v-for="value, idx in values"
               >
-                  <span class="mr-24 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
+                  <span class="before-item-title mr-24 mt-4 min-w-[51px]">{{ beforeInputTitle + ` ${idx + 1}` }}</span>
                   <NumberInput
                       :value="value === 0 ? '' : value"
                       :displayPlaceholder="false"
@@ -89,6 +89,9 @@ function changeInputValue(number: number, idx: number) {
 
 <style scoped>
 /***** SITES STYLES *****/
+.explorer .before-input-title {
+    @apply text-18;
+}
 .explorer .multi-inputs__title {
     @apply font-medium;
 }
