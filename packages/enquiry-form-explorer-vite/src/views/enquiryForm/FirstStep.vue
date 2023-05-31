@@ -387,10 +387,11 @@ router.replace('/');
             v-model="formData.newsletterAgreement"
           />
         </fieldset>
+
         <div class="flex justify-center">
           <Submit
             v-if="!isPending"
-            class="btn-secondary h-48 py-10 px-24 my-50 w-full md:w-auto text-center font-extrabold"
+            class="btn-secondary submit-btn h-48 my-50 w-full md:w-auto text-center font-extrabold"
             >Starte meine Reiseplanung</Submit
           >
           <Spinner class="my-50 ml-auto mr-auto height-[48px]" v-if="isPending" />
@@ -426,5 +427,11 @@ router.replace('/');
 }
 .stattravel .multi-inputs-wrapper {
   @apply max-w-[275px];
+}
+.explorer .submit-btn {
+  @apply py-16 px-28;
+}
+.stattravel .submit-btn {
+  @apply py-10 px-24;
 }
 </style>
