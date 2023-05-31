@@ -5,6 +5,9 @@ import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
 const { getTailwindConfig } = require('configs-brand-explorer/tailwind.config');
 
 const site = process.env.SITE || 'explorer';
+const favIcon = process.env.SITE === 'stattravel'
+  ? './src/assets/logoStattravel.svg'
+  : './src/assets/logoEx.svg';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,7 +21,10 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    vitePluginFaviconsInject(favIcon),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
