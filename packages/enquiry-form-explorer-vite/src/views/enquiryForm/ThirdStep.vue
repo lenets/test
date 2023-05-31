@@ -197,6 +197,6 @@ async function submitForm() {
   @apply py-10 px-16 min-w-[336px] flex items-center justify-center;
 }
 .stattravel .prev-btn {
-  @apply w-full;
+  @apply w-full md:w-auto;
 }
 </style>
