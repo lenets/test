@@ -89,7 +89,7 @@ function changeInputValue(number: number, idx: number) {
 
 <style scoped>
 /***** SITES STYLES *****/
-.explorer .before-input-title {
+.explorer .before-item-title {
     @apply text-18;
 }
 .explorer .multi-inputs__title {
