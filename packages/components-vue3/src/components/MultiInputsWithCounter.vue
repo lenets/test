@@ -122,4 +122,7 @@ margin: 0;
 .stattravel .counter label > div:first-child {
     @apply font-semibold;
 }
+.stattravel .counter label > div:nth-child(2) {
+    @apply font-medium;
+}
 </style>
